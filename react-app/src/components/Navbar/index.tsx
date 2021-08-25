@@ -2,7 +2,7 @@ import './styles.scss';
 
 export function Navbar() {
     return (
-        <nav>
+        <nav className="padding-border">
             Navbar
         </nav>
     );

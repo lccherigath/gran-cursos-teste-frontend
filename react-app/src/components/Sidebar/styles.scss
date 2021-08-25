@@ -1,0 +1,11 @@
+.sidebar {
+    padding: calc(var(--default-margin-padding) - 10px);
+    box-shadow: var(--sidebar-box-shadow);
+
+    position: fixed;
+    width: var(--sidebar-width);
+    // left: calc(-1 * var(--sidebar-width));
+    height: 100%;
+    // background-color: #f3e;
+    transition: all .5s ease;
+}

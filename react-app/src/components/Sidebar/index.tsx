@@ -7,69 +7,69 @@ export function Sidebar() {
             <img src={logo} alt="Logo" />
 
             <div>
-                <i className="fas fa-home"></i>
+                <i className="far fa-home"></i>
                 Dashboard
             </div>
             <div>
-                <i className="fas fa-circle"></i>
+                <i className="far fa-circle"></i>
                 eCommerce
             </div>
 
             <h2>APPS</h2>
             <div>
-                <i className="fas fa-envelope"></i>
+                <i className="far fa-envelope"></i>
                 Email
             </div>
             <div>
-                <i className="fas fa-comment-alt"></i>
+                <i className="far fa-comment-alt"></i>
                 Chat
             </div>
             <div>
-                <i className="fas fa-check-square"></i>
+                <i className="far fa-check-square"></i>
                 Todo
             </div>
             <div>
-                <i className="fas fa-calendar"></i>
+                <i className="far fa-calendar"></i>
                 Calendar
             </div>
 
             <h2>UI Elements</h2>
             <div>
-                <i className="fas fa-th"></i>
+                <i className="far fa-th"></i>
                 Grid
             </div>
             <div>
-                <i className="fas fa-tint"></i>
+                <i className="far fa-tint"></i>
                 Colors
             </div>
             <div>
-                <i className="fas fa-credit-card"></i>
+                <i className="far fa-credit-card"></i>
                 Card
             </div>
             <div>
-                <i className="fas fa-th-large"></i>
+                <i className="far fa-th-large"></i>
                 Table
             </div>
             <div>
-                <i className="fas fa-archive"></i>
+                <i className="far fa-archive"></i>
                 Components
             </div>
 
             <h2>Forms</h2>
             <div>
-                <i className="fas fa-clone"></i>
+                <i className="far fa-clone"></i>
                 Form Elements
             </div>
             <div>
-                <i className="fas fa-table"></i>
+                <i className="far fa-table"></i>
                 Form Layouts
             </div>
             <div>
-                <i className="fas fa-file-alt"></i>
+                <i className="far fa-file-alt"></i>
                 Form Wizard
             </div>
             <div>
-                <i className="fas fa-check-circle"></i>
+                <i className="far fa-check-circle"></i>
                 Form Validation
             </div>
         </div>

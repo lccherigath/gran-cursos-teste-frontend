@@ -1,0 +1,66 @@
+.filter-container {
+    display: flex;
+    flex-direction: column;
+
+    .component-title {
+        padding: 10px 0;
+    }
+
+    .filter {
+        margin: calc(var(--default-margin-padding) - 15px) 0;
+
+        p {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        hr {
+            margin: 25px 0;
+        }
+
+        .filter-field {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+
+            .input-group {
+                display: flex;
+                align-items: center;
+                flex-grow: 1;
+
+                input {
+                    margin-right: 10px;
+                }
+
+                label {
+                    width: 100%;
+                }
+            }
+
+            .rating-field {
+                display: flex;
+                gap: 5px;
+
+                .fa-star {
+                    color: var(--yellow-500);
+                }
+
+                span {
+                    margin-left: 10px;
+                }
+            }
+
+        }
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 15px;
+        border: 0;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        background-color: var(--blue-600);
+        color: var(--light-0);
+    }
+
+}

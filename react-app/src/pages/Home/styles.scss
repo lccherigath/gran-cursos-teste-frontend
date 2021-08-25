@@ -1,3 +1,104 @@
-.teste {
-    color: var(--blue-600);
+main {
+    display: flex;
+    flex-direction: column;
+    padding: var(--default-margin-padding);
+    
+    margin-left: var(--sidebar-width);
+
+    .breadcrumb {
+        display: flex;
+        justify-content: space-between;
+        margin: var(--default-margin-padding) 0;
+
+        > div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            .breadcrumb-root {
+                font-size: 1.5rem;
+                border-right: 1px solid red;
+                padding-right: 18px;
+                margin-right: 10px;
+            }
+
+            a {
+                text-decoration: none;
+                // color: #000;
+            }
+
+            .last-node {
+                // color: #;
+            }
+        }
+
+        button {
+            border: 0;
+            padding: 8px;
+            background-color: red;
+            color: var(--light-0);
+            font-size: 1.3rem;
+            border-radius: 50%;
+        }
+    }
+
+    .content {
+        display: flex;
+
+        aside {
+            min-width: 300px;
+            // background-color: red;
+        }
+
+        section {
+            flex: 1;
+            padding-left: var(--default-margin-padding);
+
+            div:first-child {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .view-mode {
+                    display: flex;
+                    gap: 10px;
+
+                    select {
+                        width: 135px;
+                        border: 0;
+                        outline: none;
+                        background-color: var(--light-0);
+                    }
+
+                    select, i {
+                        padding: 10px;
+                    }
+                }
+            }
+
+            .search {
+                display: flex;
+                align-items: center;
+                margin-top: 15px;
+                font-size: 1.2rem;
+
+                input {
+                    outline: none;
+                    padding: 0 10px;
+                    border: 0;
+                    font-size: 1.2rem;
+                    font-family: Montserrat, sans-serif;
+                    flex: 1;
+
+                    &::placeholder {
+                        font-size: 1.2rem;
+                    }
+                }
+
+                i {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
 }
