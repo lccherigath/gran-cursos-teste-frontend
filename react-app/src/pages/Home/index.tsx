@@ -38,7 +38,7 @@ export function Home() {
                     </aside>
 
                     <section>
-                        <div>
+                        <div className="view-options">
                             <span className="count">7.618 results found in 5ms</span>
                             <div className="view-mode">
                                 <select className="padding-border">
@@ -56,7 +56,7 @@ export function Home() {
                             <i className="fas fa-search"></i>
                         </div>
 
-                        <div>
+                        <div className="products">
                             <ProductLine></ProductLine>
                         </div>
                         {/* <div>

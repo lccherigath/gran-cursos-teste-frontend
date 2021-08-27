@@ -1,3 +1,31 @@
 .product-line {
     margin: var(--default-margin-padding) 0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    // padding: calc(var(--default-margin-padding) - 15px);
+
+    display: flex;
+    justify-content: space-between;
+    // align-items: flex-start;
+
+    .product-image {
+        padding: calc(var(--default-margin-padding) - 15px);
+
+        img {
+            height: 210px;
+        }
+    }
+
+    .product-details {
+        flex: 1;
+        padding:
+        calc(var(--default-margin-padding) - 15px)
+        calc(var(--default-margin-padding) - 15px)
+        calc(var(--default-margin-padding) - 15px)
+        0;
+    }
+
+    .product-buy {
+        flex-basis: 230px;
+    }
 }

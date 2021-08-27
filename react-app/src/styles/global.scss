@@ -10,10 +10,16 @@ body {
     font-family: 'Montserrat', sans-serif;
     // background-color: var(--light-500);
     background-color: #fff;
+    color: var(--dark-900);
 }
 
 button {
     cursor: pointer;
+    padding: 15px;
+    border: 0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+
     transition: filter .2s;
 }
 
