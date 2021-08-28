@@ -1,2 +1,55 @@
 nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 1.5rem;
+
+    .icons, .info, .user-info {
+        display: flex;
+        align-items: center;
+    }
+
+    .icons {
+        gap: 1rem;
+    }
+
+    .info {
+        gap: 1.3rem;
+
+        select {
+            width: 100px;
+        }
+
+        .user-info {
+            gap: 1rem;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                
+                .user-name {
+                    font-size: 1rem;
+                }
+                
+                .user-status {
+                    font-size: .8rem;
+                }
+            }
+
+            img {
+                height: 40px;
+                border-radius: 50px;
+                box-shadow: var(--sidebar-box-shadow);
+            }
+        }
+
+    }
+}
+
+
+@media (max-width: 1052px) {
+    nav {
+        display: none;
+    }
 }

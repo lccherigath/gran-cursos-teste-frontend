@@ -56,12 +56,45 @@ export function Home() {
                             <i className="fas fa-search"></i>
                         </div>
 
-                        <div className="products">
+                            {/* <ProductLine></ProductLine>
+                            <ProductLine></ProductLine> */}
+                        <div className="products-list lines">
+                            <ProductLine></ProductLine>
+                            <ProductLine></ProductLine>
+                            <ProductLine></ProductLine>
+                            <ProductLine></ProductLine>
                             <ProductLine></ProductLine>
                         </div>
-                        {/* <div>
+
+                        <div className="products-list cards">
                             <ProductCard></ProductCard>
-                        </div> */}
+                            <ProductCard></ProductCard>
+                            <ProductCard></ProductCard>
+                            <ProductCard></ProductCard>
+                            <ProductCard></ProductCard>
+                        </div>
+
+
+                        <div className="pagination">
+                            <button className="page-item previous">
+                                <i className="fas fa-chevron-left"></i>
+                            </button>
+                            <div className="pages">
+                                <button className="page-item">1</button>
+                                <button className="page-item">2</button>
+                                <button className="page-item">3</button>
+                                <button className="page-item">4</button>
+                                <button className="page-item">5</button>
+                                <button className="page-item active">6</button>
+                                <button className="page-item">7</button>
+                                <button className="page-item">8</button>
+                                <button className="page-item">9</button>
+                                <button className="page-item">10</button>
+                            </div>
+                            <button className="page-item next">
+                                <i className="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
                     </section>
                 </div>
             </main>

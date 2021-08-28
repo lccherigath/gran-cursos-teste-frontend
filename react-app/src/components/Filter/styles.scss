@@ -18,6 +18,15 @@
             margin: 25px 0;
         }
 
+        .slider-title {
+            display: flex;
+            justify-content: space-between;
+
+            span {
+                font-weight: bold;
+            }
+        }
+
         .filter-field {
             display: flex;
             justify-content: space-between;
@@ -50,6 +59,22 @@
                 }
             }
 
+            &.price-range {
+                width: 100%;
+                flex: 1;
+
+                .range-input {
+                    width: 100%;
+                }
+
+                .first-half {
+                    transform: rotateY(180deg);
+                }
+
+                input[type="range"].second-half {
+                    margin-left: -7px;
+                }
+            }
         }
     }
 
@@ -57,6 +82,10 @@
         font-size: 1rem;
         background-color: var(--blue-600);
         color: var(--light-0);
+
+        i {
+            margin-right: 8px;
+        }
     }
 
 }

@@ -4,72 +4,87 @@ import logo from '../../assets/images/logo.svg';
 export function Sidebar() {
     return (
         <div className="sidebar">
-            <img src={logo} alt="Logo" />
+            <img src={logo} className="logo" alt="Logo" />
 
-            <div>
-                <i className="far fa-home"></i>
-                Dashboard
+            <div className="sidebar-menu-item dropdown">
+                <div>
+                    <i className="fas fa-home"></i>
+                    Dashboard
+                </div>
+                <i className="fas fa-chevron-right"></i>
             </div>
-            <div>
-                <i className="far fa-circle"></i>
+            <div className="sidebar-menu-item">
+                <i className="fas fa-circle"></i>
                 eCommerce
             </div>
 
-            <h2>APPS</h2>
-            <div>
-                <i className="far fa-envelope"></i>
+            <h4>APPS</h4>
+            <div className="sidebar-menu-item">
+                <i className="fas fa-envelope"></i>
                 Email
             </div>
-            <div>
-                <i className="far fa-comment-alt"></i>
+            <div className="sidebar-menu-item">
+                <i className="fas fa-comment-alt"></i>
                 Chat
             </div>
-            <div>
-                <i className="far fa-check-square"></i>
+            <div className="sidebar-menu-item">
+                <i className="fas fa-check-square"></i>
                 Todo
             </div>
-            <div>
-                <i className="far fa-calendar"></i>
+            <div className="sidebar-menu-item">
+                <i className="fas fa-calendar"></i>
                 Calendar
             </div>
 
-            <h2>UI Elements</h2>
-            <div>
-                <i className="far fa-th"></i>
-                Grid
+            <h4>UI Elements</h4>
+            <div className="sidebar-menu-item dropdown">
+                <div>
+                    <i className="fas fa-th"></i>
+                    Grid
+                </div>
+                <i className="fas fa-chevron-right"></i>
             </div>
-            <div>
-                <i className="far fa-tint"></i>
+            <div className="sidebar-menu-item">
+                <i className="fas fa-tint"></i>
                 Colors
             </div>
-            <div>
-                <i className="far fa-credit-card"></i>
-                Card
+            <div className="sidebar-menu-item dropdown">
+                <div>
+                    <i className="fas fa-credit-card"></i>
+                    Card
+                </div>
+                <i className="fas fa-chevron-right"></i>
             </div>
-            <div>
-                <i className="far fa-th-large"></i>
+            <div className="sidebar-menu-item">
+                <i className="fas fa-th-large"></i>
                 Table
             </div>
-            <div>
-                <i className="far fa-archive"></i>
-                Components
+            <div className="sidebar-menu-item dropdown">
+                <div>
+                    <i className="fas fa-archive"></i>
+                    Components
+                </div>
+                <i className="fas fa-chevron-right"></i>
             </div>
 
-            <h2>Forms</h2>
-            <div>
-                <i className="far fa-clone"></i>
-                Form Elements
+            <h4>Forms</h4>
+            <div className="sidebar-menu-item dropdown">
+                <div>
+                    <i className="fas fa-clone"></i>
+                    Form Elements
+                </div>
+                <i className="fas fa-chevron-right"></i>
             </div>
-            <div>
-                <i className="far fa-table"></i>
+            <div className="sidebar-menu-item">
+                <i className="fas fa-table"></i>
                 Form Layouts
             </div>
-            <div>
-                <i className="far fa-file-alt"></i>
+            <div className="sidebar-menu-item">
+                <i className="fas fa-file-alt"></i>
                 Form Wizard
             </div>
-            <div>
-                <i className="far fa-check-circle"></i>
+            <div className="sidebar-menu-item">
+                <i className="fas fa-check-circle"></i>
                 Form Validation
             </div>
         </div>

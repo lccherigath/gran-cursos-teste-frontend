@@ -17,14 +17,20 @@ main {
 
             .breadcrumb-root {
                 font-size: 1.5rem;
-                border-right: 1px solid red;
+                border-right: 1px solid var(--light-500);
                 padding-right: 18px;
                 margin-right: 10px;
             }
 
             a {
                 text-decoration: none;
-                // color: #000;
+                color: var(--dark-900);
+
+                transition: .2s;
+            }
+
+            a:hover {
+                color: var(--dark-500);
             }
 
             .last-node {
@@ -35,7 +41,7 @@ main {
         button {
             border: 0;
             padding: 8px;
-            background-color: red;
+            background-color: var(--dark-900);
             color: var(--light-0);
             font-size: 1.3rem;
             border-radius: 50%;
@@ -47,7 +53,6 @@ main {
 
         aside {
             min-width: 300px;
-            // background-color: red;
         }
 
         section {
@@ -65,12 +70,10 @@ main {
 
                     select {
                         width: 135px;
-                        border: 0;
-                        outline: none;
-                        background-color: var(--light-0);
                     }
 
                     select, i {
+                        cursor: pointer;
                         padding: 10px;
                     }
                 }
@@ -97,6 +100,100 @@ main {
 
                 i {
                     margin-right: 10px;
+                }
+            }
+
+            .products-list {
+                display: flex;
+                flex-direction: column;
+                
+                &.cards {
+                    display: none;
+                }
+
+                &.lines {
+                    display: flex;
+                }
+            }
+
+            .pagination {
+                display: flex;
+                justify-content: center;
+
+                button.page-item {
+                    width: 57px;
+                    border-radius: 50%;
+                    padding: 12px 16px;
+                    box-shadow: none;
+                    font-size: 1.5rem;
+                    background-color: var(--dark-900);
+                    color: #fff;
+
+                    transition: .2s;
+
+                }
+
+                button.page-item.active {
+                    background-color: var(--red-500);
+                }
+
+                button.page-item:hover {
+                    background-color: var(--red-500);
+                    filter: none;
+                }
+
+                .pages {
+                    margin: 0 20px;
+                    background-color: var(--dark-900);
+                    border-radius: 26px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 767.98px) {
+    main {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 1052px) {
+    main {
+        .breadcrumb {
+            display: none;
+        }
+
+        .content {
+            section {
+                padding-left: 0;
+            }
+
+            aside {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+    main {
+        .content {
+            section {
+                .products-list {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    margin: var(--default-margin-padding) 0;
+
+                    &.cards {
+                        display: flex;
+                    }
+
+                    &.lines {
+                        display: none;
+                    }
                 }
             }
         }

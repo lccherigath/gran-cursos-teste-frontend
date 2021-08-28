@@ -2,11 +2,10 @@
     margin: var(--default-margin-padding) 0;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    // padding: calc(var(--default-margin-padding) - 15px);
+    max-height: 244px;
 
     display: flex;
     justify-content: space-between;
-    // align-items: flex-start;
 
     .product-image {
         padding: calc(var(--default-margin-padding) - 15px);
@@ -23,9 +22,72 @@
         calc(var(--default-margin-padding) - 15px)
         calc(var(--default-margin-padding) - 15px)
         0;
+        border-right: 1px solid var(--light-500);
+
+        h3.product-name {
+            font-weight: normal;
+        }
+
+        p.product-store {
+            margin: 10px 0 15px;
+            // color: var(--mid-700);
+        }
     }
 
     .product-buy {
         flex-basis: 230px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: calc(var(--default-margin-padding) - 15px);
+
+        i {
+            margin-right: 8px;
+        }
+        
+        .product-rating {
+            display: flex;
+            justify-content: flex-end;
+            
+            div {
+                display: flex;
+                gap: 5px;
+                padding: 8px 10px;
+                border-radius: 5px;
+                background-color: var(--yellow-500);
+
+                i {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .product-price {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .price {
+                font-size: 1.4rem;
+            }
+
+            .shipping {
+                font-size: .9rem;
+                color: var(--green-500);
+            }
+        }
+
+        button {
+            font-size: .9rem;
+            color: var(--light-0);
+
+            &.add-to-wishlist {
+                background-color: var(--mid-600);
+            }
+
+            &.add-to-cart {
+                background-color: var(--blue-600);
+            }
+        }
     }
 }

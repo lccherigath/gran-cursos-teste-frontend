@@ -9,7 +9,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     // background-color: var(--light-500);
-    background-color: #fff;
+    background-color: var(--light-0);
     color: var(--dark-900);
 }
 
@@ -19,6 +19,7 @@ button {
     border: 0;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
+    font-family: 'Montserrat', sans-serif;
 
     transition: filter .2s;
 }
@@ -27,10 +28,88 @@ button:hover {
     filter: brightness(.7);
 }
 
+select {
+    font-family: 'Montserrat', sans-serif;
+    border: 0;
+    outline: none;
+    background-color: var(--light-0);
+}
+
 .padding-border {
     padding: calc(var(--default-margin-padding) - 15px);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+.check-input {
+    width: 1.7em;
+    height: 1.5em;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    appearance: none;
+}
+
+.check-input[type=checkbox] {
+    border-radius: 0.25em;
+}
+
+.check-input[type=radio] {
+    border-radius: 50%;
+}
+
+.check-input:active {
+    filter: brightness(90%);
+}
+.check-input:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(9, 30, 66, 0.25);
+}
+
+.check-input:checked {
+    background-color: var(--blue-600);
+    border-color: var(--blue-600);
+}
+
+.check-input:checked[type=checkbox] {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+}
+
+.check-input:checked[type=radio] {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.check-input[type=checkbox]:indeterminate {
+    background-color: var(--blue-600);
+    border-color: var(--blue-600);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
+}
+
+// ***** Scrollbar
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--light-0);
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--light-400);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--light-500);
 }
 
 
