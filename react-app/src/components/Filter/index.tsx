@@ -1,11 +1,18 @@
 import './styles.scss';
 
-export function Filter() {
+interface Props {
+    mobileFilterStatus: Function;
+}
+
+export function Filter(props: Props) {
     return (
         <div className="filter-container">
-            <span className="component-title">Filters</span>
+            <div className="component-header">
+                <span>Filters</span>
+                <i className="fas fa-times" onClick={() => props.mobileFilterStatus(false)}></i>
+            </div>
 
-            <div className="filter padding-border">
+            <div className="filter">
                 <p>Multi Range</p>
                 <div className="filter-field">
                     <div className="input-group">

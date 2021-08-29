@@ -1,13 +1,17 @@
 import './styles.scss';
 import logo from '../../assets/images/logo.svg';
+import useWindowWidth from '../../hooks/useWindowWidth';
 
 interface Props {
     sidebarStatus: boolean;
 }
 
 export function Sidebar(props: Props) {
+
+    const width = useWindowWidth();
+
     return (
-        <div className="sidebar" style={{left: props.sidebarStatus ? 0 : '-100vw'}}>
+        <div className="sidebar" style={{left: props.sidebarStatus || width > 991 ? 0 : '-100vw'}}>
             <img src={logo} className="logo" alt="Logo" />
 
             <div className="sidebar-menu-item dropdown">

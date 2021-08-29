@@ -12,9 +12,14 @@ import './styles.scss'
 export function Home() {
 
     const [visibleSidebar, setVisibleSidebar] = useState(false);
+    const [visibleMobileFilter, setVisibleMobileFilter] = useState(false);
 
     function receiveMenuStatus(sidebarStatus: boolean) {
         setVisibleSidebar(sidebarStatus);
+    }
+
+    function receiveMobileFilterStatus(mobileFilterStatus: boolean) {
+        setVisibleMobileFilter(mobileFilterStatus);
     }
 
     return (
@@ -41,8 +46,8 @@ export function Home() {
                 </div>
 
                 <div className="content">
-                    <aside>
-                        <Filter></Filter>
+                    <aside style={{right: visibleMobileFilter  ? '0' : '100vw'}}>
+                        <Filter mobileFilterStatus={receiveMobileFilterStatus}></Filter>
                     </aside>
 
                     <section>
@@ -54,7 +59,16 @@ export function Home() {
                                 </select>
                                 <i className="fas fa-th-large padding-border"></i>
                                 <i className="fas fa-bars padding-border"></i>
-                                <i className="fas fa-filter padding-border"></i>
+                                <input
+                                    type="checkbox"
+                                    id="mobile_filter_menu"
+                                    onChange={() => setVisibleMobileFilter(!visibleMobileFilter)}
+                                    checked={visibleMobileFilter}
+                                />
+                                <label htmlFor="mobile_filter_menu">
+                                    <i className="fas fa-filter padding-border"></i>
+                                </label>
+                                {/* <p>{visibleMobileFilter ? 'true' : 'false'}</p> */}
                             </div>
                         </div>
 

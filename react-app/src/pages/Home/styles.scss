@@ -169,6 +169,10 @@ main {
     }
 }
 
+input#mobile_filter_menu {
+    display: none;
+}
+
 @media (max-width: 335px) {
     main {
         padding: 8px !important;
@@ -271,6 +275,18 @@ main {
     }
 }
 
+@media (max-width: 991.98px) {
+    main {
+        .content {
+            aside {
+                // top: 0 !important;
+                top: var(--mobile-nav-height) !important;
+                height: calc(100vh - var(--mobile-nav-height)) !important;
+            }
+        }
+    }
+}
+
 @media (max-width: 1052px) {
     main {
         .content {
@@ -287,15 +303,20 @@ main {
             }
 
             aside {
-                display: none;
+                // display: none;
+                position: fixed;
+                z-index: 1999;
+                width: 100vw;
+                height: 100vh;
+                // right: 0;
+                // right: 100vw;
+                top: 0;
+                transition: all .5s ease;
+
+                overflow: scroll;
+                overflow-x: hidden;
             }
         }
-    }
-}
-
-@media (min-width: 1052.98px) {
-    main .content section .view-options .view-mode .fa-filter {
-        // display: none !important;
     }
 }
 
