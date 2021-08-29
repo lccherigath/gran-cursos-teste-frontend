@@ -2,6 +2,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--light-0);
 
     font-size: 1.5rem;
 
@@ -20,36 +21,84 @@ nav {
         select {
             width: 100px;
         }
-
-        .user-info {
-            gap: 1rem;
-
-            div {
-                display: flex;
-                flex-direction: column;
-                
-                .user-name {
-                    font-size: 1rem;
-                }
-                
-                .user-status {
-                    font-size: .8rem;
-                }
-            }
-
-            img {
-                height: 40px;
-                border-radius: 50px;
-                box-shadow: var(--sidebar-box-shadow);
-            }
-        }
-
     }
 }
 
+.user-info {
+    display: flex;
+    gap: 1rem;
 
-@media (max-width: 1052px) {
+    div {
+        display: flex;
+        flex-direction: column;
+        
+        .user-name {
+            font-size: 1rem;
+        }
+        
+        .user-status {
+            font-size: .8rem;
+        }
+    }
+
+    img {
+        height: 40px;
+        border-radius: 50px;
+        box-shadow: var(--sidebar-box-shadow);
+    }
+}
+
+nav.mobile-nav {
+    display: none;
+}
+
+@media (max-width: 350px) {
+    nav.mobile-nav {
+        img.logo {
+            height: 50% !important;
+        }
+    }
+}
+
+@media (min-width: 350.98px) and (max-width: 570px) {
+    nav.mobile-nav {
+        img.logo {
+            height: 70% !important;
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
     nav {
         display: none;
+    }
+
+    nav.mobile-nav {
+        background-color: var(--light-0);
+        box-shadow: var(--sidebar-box-shadow);
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: var(--mobile-nav-height);
+        width: 100%;
+        z-index: 1000;
+        padding: 10px;
+
+        display: flex;
+        justify-content: space-between;
+
+        img.logo {
+            height: 100%;
+        }
+
+        .menu-icon {
+            #check {
+                display: none;
+            }
+
+            label {
+                font-size: 2rem;
+            }
+        }
     }
 }

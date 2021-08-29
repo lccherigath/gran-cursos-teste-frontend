@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Filter } from '../../components/Filter';
@@ -9,12 +10,19 @@ import { Sidebar } from '../../components/Sidebar';
 import './styles.scss'
 
 export function Home() {
+
+    const [visibleSidebar, setVisibleSidebar] = useState(false);
+
+    function receiveMenuStatus(sidebarStatus: boolean) {
+        setVisibleSidebar(sidebarStatus);
+    }
+
     return (
         <>
-            <Sidebar></Sidebar>
+            <Sidebar sidebarStatus={visibleSidebar}></Sidebar>
 
             <main>
-                <Navbar></Navbar>
+                <Navbar sidebarStatus={receiveMenuStatus}></Navbar>
 
                 <div className="breadcrumb">
                     <div>
@@ -46,6 +54,7 @@ export function Home() {
                                 </select>
                                 <i className="fas fa-th-large padding-border"></i>
                                 <i className="fas fa-bars padding-border"></i>
+                                <i className="fas fa-filter padding-border"></i>
                             </div>
                         </div>
 
@@ -72,6 +81,7 @@ export function Home() {
                             <ProductCard></ProductCard>
                             <ProductCard></ProductCard>
                             <ProductCard></ProductCard>
+                            <ProductCard></ProductCard>
                         </div>
 
 
@@ -82,13 +92,9 @@ export function Home() {
                             <div className="pages">
                                 <button className="page-item">1</button>
                                 <button className="page-item">2</button>
-                                <button className="page-item">3</button>
+                                <button className="page-item active">3</button>
                                 <button className="page-item">4</button>
-                                <button className="page-item">5</button>
-                                <button className="page-item active">6</button>
-                                <button className="page-item">7</button>
-                                <button className="page-item">8</button>
-                                <button className="page-item">9</button>
+                                <button disabled={true} className="page-item disabled">...</button>
                                 <button className="page-item">10</button>
                             </div>
                             <button className="page-item next">

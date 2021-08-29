@@ -2,6 +2,7 @@ main {
     display: flex;
     flex-direction: column;
     padding: var(--default-margin-padding);
+    background-color: var(--light-300);
     
     margin-left: var(--sidebar-width);
 
@@ -75,6 +76,11 @@ main {
                     select, i {
                         cursor: pointer;
                         padding: 10px;
+                        background-color: var(--light-0);
+                    }
+
+                    i.fa-filter {
+                        display: none;
                     }
                 }
             }
@@ -84,6 +90,7 @@ main {
                 align-items: center;
                 margin-top: 15px;
                 font-size: 1.2rem;
+                background-color: var(--light-0);
 
                 input {
                     outline: none;
@@ -119,6 +126,7 @@ main {
             .pagination {
                 display: flex;
                 justify-content: center;
+                align-items: center;
 
                 button.page-item {
                     width: 57px;
@@ -142,6 +150,15 @@ main {
                     filter: none;
                 }
 
+                button.disabled {
+                    background-color: inherit;
+                }
+
+                button.disabled:hover {
+                    background-color: inherit;
+                    filter: none;
+                }
+
                 .pages {
                     margin: 0 20px;
                     background-color: var(--dark-900);
@@ -152,22 +169,121 @@ main {
     }
 }
 
+@media (max-width: 335px) {
+    main {
+        padding: 8px !important;
+    }
+}
+
+@media (max-width: 450px) {
+    main {
+        .content {
+            section {
+                .view-options {
+
+                    .count {
+                        font-size: .8rem;
+                    }
+                    .view-mode {
+                        select {
+                            width: 100px;
+                        }
+                    }
+                }
+
+                .search {
+                    font-size: 1rem;
+
+                    input {
+                        outline: none;
+                        padding: 0 10px;
+                        border: 0;
+                        font-size: 1rem;
+
+                        &::placeholder {
+                            font-size: 1rem;
+                        }
+                    }
+
+                    i {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 664px) {
+    main {
+        .breadcrumb {
+            display: none;
+        }
+    }
+}
 
 @media (max-width: 767.98px) {
     main {
+        // margin-left: 0;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 856px) {
+    main {
+        .content {
+            section {
+                .pagination {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    main {
         margin-left: 0;
+        margin-top: var(--mobile-nav-height);
+        padding-top: 10px;
+
+        .breadcrumb {
+            margin-top: 15px;
+        }
+    }
+}
+
+@media (min-width: 1053px) and (max-width: 1185px) {
+    main {
+        .content {
+            section {
+                .pagination {
+                    
+                    button.page-item {
+                        width: 47px;
+                        padding: 10px 14px;
+                        font-size: 1.2rem;
+                    }
+                    
+                }
+            }
+        }
     }
 }
 
 @media (max-width: 1052px) {
     main {
-        .breadcrumb {
-            display: none;
-        }
-
         .content {
             section {
                 padding-left: 0;
+
+                .view-options {
+                    .view-mode {
+                        i.fa-filter {
+                            display: block;
+                        }
+                    }
+                }
             }
 
             aside {
@@ -177,10 +293,24 @@ main {
     }
 }
 
+@media (min-width: 1052.98px) {
+    main .content section .view-options .view-mode .fa-filter {
+        // display: none !important;
+    }
+}
+
 @media (max-width: 1600px) {
     main {
         .content {
             section {
+                .view-options {
+                    .view-mode {
+                        i {
+                            display: none;
+                        }
+                    }
+                }
+
                 .products-list {
                     flex-direction: row;
                     flex-wrap: wrap;

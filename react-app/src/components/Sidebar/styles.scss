@@ -1,6 +1,7 @@
 .sidebar {
     padding: calc(var(--default-margin-padding) - 10px);
     box-shadow: var(--sidebar-box-shadow);
+    background-color: var(--light-0);
 
     position: fixed;
     width: var(--sidebar-width);
@@ -21,7 +22,6 @@
     }
 
     .sidebar-menu-item {
-        // background-color: #f00;
         padding: 10px;
         border-radius: 4px;
         cursor: pointer;
@@ -50,9 +50,18 @@
     }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
     .sidebar {
-        left: calc(-1 * var(--sidebar-width));
+        z-index: 2000;
+        height: calc(100vh - var(--mobile-nav-height));
+
+        // left: calc(-1 * var(--sidebar-width));
+        // left: -100vw;
+        width: 100vw;
         box-shadow: none;
+
+        img.logo {
+            display: none;
+        }
     }
 }

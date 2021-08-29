@@ -2,7 +2,10 @@
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     min-width: 300px;
+    // max-width: 445px;
+    background-color: var(--light-0);
     flex: 1;
+    flex-grow: 1;
 
     display: flex;
     flex-direction: column;
@@ -81,5 +84,11 @@
         &.add-to-cart {
             background-color: var(--blue-600);
         }
+    }
+}
+
+@media (max-width: 335px) {
+    .product-card {
+        max-width: 100%;
     }
 }

@@ -1,9 +1,13 @@
 import './styles.scss';
 import logo from '../../assets/images/logo.svg';
 
-export function Sidebar() {
+interface Props {
+    sidebarStatus: boolean;
+}
+
+export function Sidebar(props: Props) {
     return (
-        <div className="sidebar">
+        <div className="sidebar" style={{left: props.sidebarStatus ? 0 : '-100vw'}}>
             <img src={logo} className="logo" alt="Logo" />
 
             <div className="sidebar-menu-item dropdown">
