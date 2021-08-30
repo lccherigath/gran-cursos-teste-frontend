@@ -1,0 +1,18 @@
+version: '3'
+
+services: 
+  api:
+    container_name: 'gran-cursos-test-api'
+    image: 'vimagick/json-server'
+    command: -H 0.0.0.0 -p 3000 -w db.json --no-cors
+    ports:
+      - 3001:3000
+    volumes:
+      - ./server:/data
+    restart: always
+  
+  react-app:
+    container_name: 'gran-cursos-test-client'
+    build: ./
+    ports:
+      - 8080:80

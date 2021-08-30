@@ -151,11 +151,13 @@ main {
                 }
 
                 button.disabled {
-                    background-color: inherit;
+                    // background-color: inherit;
+                    background-color: var(--dark-900);
                 }
 
                 button.disabled:hover {
-                    background-color: inherit;
+                    // background-color: inherit;
+                    background-color: var(--dark-900);
                     filter: none;
                 }
 
@@ -230,18 +232,6 @@ input#mobile_filter_menu {
     main {
         // margin-left: 0;
         padding: 15px;
-    }
-}
-
-@media (max-width: 856px) {
-    main {
-        .content {
-            section {
-                .pagination {
-                    display: none;
-                }
-            }
-        }
     }
 }
 
@@ -345,6 +335,18 @@ input#mobile_filter_menu {
                     &.lines {
                         display: none;
                     }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1600.98px) {
+    main {
+        .content {
+            section {
+                .pagination {
+                    margin-top: var(--default-margin-padding);
                 }
             }
         }

@@ -1,38 +1,44 @@
-import defaultImg from '../../assets/images/default.png'
+import { Product } from '../../hooks/useProducts';
+// import defaultImg from '../../assets/images/default.png'
 import './styles.scss';
 
-export function ProductLine() {
+export function cutLongText(text: string) {
+    const characterLimit = 300;
+    const aboveLimit = text.length > characterLimit;
+    const dotOrEmpty = aboveLimit ? '...' : '';
+    return text.substring(0, characterLimit) + dotOrEmpty;
+}
+
+export function ProductLine(props: Product) {
     return (
         <div className="product-line">
             <div className="product-image">
-                <img src={defaultImg} alt="Foto do produto" />
+                {/* <img src={defaultImg} alt="Foto do produto" /> */}
+                <img src={props.picture} alt="Foto do produto" />
             </div>
             <div className="product-details">
-                <h3 className="product-name">Apple Watch Series 4 GPS</h3>
-                <p className="product-store">By Apple</p>
-                <p className="product-description">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                </p>
+                <h3 className="product-name">{props.name}</h3>
+                <p className="product-store">By {props.store}</p>
+                <p className="product-description">{cutLongText(props.description)}</p>
             </div>
             <div className="product-buy">
+                {/* { props.rating >= 3 && ( */}
                 <span className="product-rating">
-                    <div>
-                        3.4
+                    <div style={{backgroundColor: props.rating >= 3 ? 'var(--yellow-500)' : 'var(--light-300)'}}>
+                        {props.rating === 5 ? '5' : props.rating.toFixed(2)}
                         <i className="far fa-star"></i>
                     </div>
                 </span>
+                {/* )} */}
                 <span className="product-price text-center">
-                    <span className="price">$199</span>
-                    <span className="shipping text-center">
+                    <span className="price">${props.price.toFixed(2)}</span>
+                    <span className="shipping text-center" style={{color: props.shipping === 0 ? 'var(--green-500)' : 'var(--dark-900)'}}>
                         <i className="fas fa-shopping-cart"></i>
-                        Free Shipping
+                        {props.shipping === 0 ? 'Free Shipping' : ('$' + props.shipping.toFixed(2))}
                     </span>
                 </span>
                 <button className="add-to-wishlist">
-                    <i className="far fa-heart"></i>
-                    {/* <i className="fas fa-heart"></i> */}
+                    {props.wishlist ? (<i className="fas fa-heart"></i>) : (<i className="far fa-heart"></i>)}
                     WISHLIST
                 </button>
                 <button className="add-to-cart">

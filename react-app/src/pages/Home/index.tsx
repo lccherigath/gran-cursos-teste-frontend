@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Filter } from '../../components/Filter';
@@ -6,6 +6,7 @@ import { Navbar } from '../../components/Navbar';
 import { ProductCard } from '../../components/ProductCard';
 import { ProductLine } from '../../components/ProductLine';
 import { Sidebar } from '../../components/Sidebar';
+import useProducts from '../../hooks/useProducts';
 
 import './styles.scss'
 
@@ -13,6 +14,17 @@ export function Home() {
 
     const [visibleSidebar, setVisibleSidebar] = useState(false);
     const [visibleMobileFilter, setVisibleMobileFilter] = useState(false);
+
+    const [currentPage, setCurrentPage] = useState(1)
+
+    const pageLimit = 6;
+    const { products, fetchProducts, totalProducts } = useProducts(pageLimit);
+
+    useEffect(
+        () => {
+            fetchProducts(currentPage)
+        }, [currentPage] // eslint-disable-line react-hooks/exhaustive-deps
+    );
 
     function receiveMenuStatus(sidebarStatus: boolean) {
         setVisibleSidebar(sidebarStatus);
@@ -82,36 +94,53 @@ export function Home() {
                             {/* <ProductLine></ProductLine>
                             <ProductLine></ProductLine> */}
                         <div className="products-list lines">
-                            <ProductLine></ProductLine>
-                            <ProductLine></ProductLine>
-                            <ProductLine></ProductLine>
-                            <ProductLine></ProductLine>
-                            <ProductLine></ProductLine>
+                            {
+                                products.map((product) =>
+                                    <ProductLine
+                                        key={product._id}
+                                        {... product}
+                                    />
+                                )
+                            }
                         </div>
 
                         <div className="products-list cards">
-                            <ProductCard></ProductCard>
-                            <ProductCard></ProductCard>
-                            <ProductCard></ProductCard>
-                            <ProductCard></ProductCard>
-                            <ProductCard></ProductCard>
-                            <ProductCard></ProductCard>
+                            {
+                                products.map((product) =>
+                                    <ProductCard
+                                        key={product._id}
+                                        {... product}
+                                    />
+                                )
+                            }
                         </div>
 
-
                         <div className="pagination">
-                            <button className="page-item previous">
+                            <button
+                                disabled={currentPage===1}
+                                className={`page-item previous ${currentPage === 1 ? 'disabled' : ''}`}
+                                onClick={() => setCurrentPage(currentPage - 1)}
+                            >
                                 <i className="fas fa-chevron-left"></i>
                             </button>
                             <div className="pages">
-                                <button className="page-item">1</button>
-                                <button className="page-item">2</button>
-                                <button className="page-item active">3</button>
-                                <button className="page-item">4</button>
-                                <button disabled={true} className="page-item disabled">...</button>
-                                <button className="page-item">10</button>
+                                {Array( Math.ceil(totalProducts/pageLimit) ).fill('').map((_, index) => (
+                                    <button
+                                        className={`page-item ${currentPage===(index+1) ? 'active' : ''}`}
+                                        key={index}
+                                        onClick={() => setCurrentPage(index + 1)}
+                                    >
+                                        {index+1}
+                                    </button>
+                                ))}
+                                {/* <button className="page-item active">3</button> */}
+                                {/* <button disabled={true} className="page-item disabled">...</button> */}
                             </div>
-                            <button className="page-item next">
+                            <button
+                                disabled={currentPage===Math.ceil(totalProducts/pageLimit)}
+                                className={`page-item next ${currentPage === Math.ceil(totalProducts/pageLimit) ? 'disabled' : ''}`}
+                                onClick={() => setCurrentPage(currentPage + 1)}
+                            >
                                 <i className="fas fa-chevron-right"></i>
                             </button>
                         </div>
